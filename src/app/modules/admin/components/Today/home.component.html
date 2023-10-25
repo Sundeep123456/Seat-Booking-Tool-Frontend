@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Booking Page</title>
+  <style>
+    /* Apply styles to the body and HTML elements to make the page cover the full viewport */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start; /* Align to the left */
+      background-color: #f0f0f0;
+    }
+
+    /* Create a container for the form */
+    .form-container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin: 20px; /* Add margin for spacing from the left side */
+    }
+
+    /* Style the "Book a Personal Space" heading */
+    h1 {
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    /* Adjust the width of the text input boxes */
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    /* Style the checkboxes and labels */
+    .form-check-input {
+      margin-right: 10px;
+    }
+
+    .form-check-label {
+      font-weight: normal;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-group label {
+      font-size: 18px;
+    }
+
+    /* Style the custom dropdown arrow */
+    .custom-dropdown-arrow {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      pointer-events: none;
+    }
+
+    /* Adjust the width of the select box */
+    select.form-control {
+      width: 100%;
+    }
+    /* Create a container for the right-side box */
+    .right-side-container {
+      background-color: white;
+      color: #0a0a0a;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin: 20px;
+      flex: 1px;
+    }
+
+    .right-side-container h2 {
+      font-size: 50px;
+    }
+
+  .image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+ 
+  
+  
+}
+
+.image-container img {
+  max-width: 15%;
+  max-height: 15%;
+  margin-top: 300px;
+  opacity: 0.6;
+
+}
+
+.text-under-image {
+  font-weight: bold;
+ 
+  margin: 10px;/* Adjust the margin as needed */
+}
+
+
+    
+  </style>
+</head>
+<body>
+  
+  <div class="form-container">
+    <h1>
+      <img src="https://cdn-icons-png.flaticon.com/512/10/10910.png" alt="" style="width: 40px; height: 40px; margin-right: 10px;">
+      Book a Personal Space
+    </h1>
+    <form>
+      <div class="form-group">
+        <label for="location">Location</label>
+        <div style="position: relative;" >
+          <select id="location" name="location" class="form-control" required size="1" style="width: 100%;">
+            <option value="towerx">Bengaluru-Tower-A</option>
+            <option value="towery">Bengaluru-Tower-B</option>
+            <option value="towerx">Bengaluru-Tower-C</option>
+            <option value="towery">Bengaluru-Tower-D</option>
+            <option value="towerx">Bengaluru-Tower-E</option>
+            <option value="towery">Bengaluru-Tower-X</option>
+            <option value="towerx">Bengaluru-Tower-Y</option>
+            <option value="towery">Bengaluru-Tower-Z</option>
+          </select>
+          <span class="custom-dropdown-arrow" style="width: 5%; margin-left: 40px;">&#9660;</span>
+        </div>
+      </div>
+  <div class="form-group">
+    <label for="floor">Floor</label>
+    <div style="position: relative;">
+    <select id="floor" name="floor" class="form-control" required size="1" >
+    <option value="1">1</option>
+    <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select> 
+    <span class="custom-dropdown-arrow">&#9660;</span>
+     </div>
+  </div>
+  <div class="form-group">
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="group">Group</label>
+    <div style="position: relative;">
+      <select id="group" name="group" class="form-control" required size="1">
+        <option value="towerx">Cubicle</option>
+        <option value="towery">Cabin</option>
+        <option value="towery">ItRoom</option>
+        <option value="towery">WorkStation</option>
+      </select>
+      <span class="custom-dropdown-arrow">&#9660;</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="workspace-type">Workspace Type</label>
+    <div style="position: relative;">
+      <select id="workspace-type" name="workspace-type" class="form-control" required size="1">
+        <option value="Desk">Desk</option>
+        <option value="Huddle Room">Workspaces</option>
+        
+      </select>
+      <span class="custom-dropdown-arrow">&#9660;</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Time Slot</label>
+    <div class="form-check">
+      <input type="checkbox" id="am" name="timeSlot" value="am" class="form-check-input">
+      <label for="am" class="form-check-label">AM</label>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" id="pm" name="timeSlot" value="pm" class="form-check-input">
+      <label for="pm" class="form-check-label">PM</label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+  </div>
+  
+  <div class="right-side-container">
+    <h2>Hello User, You are Working Remotely Today</h2>
+    <a href="your-status-link">Check your status</a>
+    <div class="image-container">
+      <img src="https://i.pinimg.com/564x/23/ac/c0/23acc0c8ff1da1a07370fe4b87f6d475.jpg" alt="">
+      <div class="text-under-image">You have no bookings today</div>
+    </div>
+  </div>
+  
+  
+
+</body>
+</html>

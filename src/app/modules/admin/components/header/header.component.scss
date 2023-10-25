@@ -1,0 +1,25 @@
+
+    /* Zoom effect on click */
+    .nav-item.zoom a {
+        transition: transform 0.2s;
+    }
+
+    .nav-item.zoom a:hover {
+        transform: scale(1.2); /* Adjust the scale factor for more zoom */
+    }
+
+    /* Increase the height of the navbar */
+    .navbar {
+        min-height: 100px; /* Adjust the height as needed */
+    }
+
+    /* Center the logo vertically */
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+/* Add margin to the logo image */
+.navbar-brand img {
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
