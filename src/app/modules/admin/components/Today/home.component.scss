@@ -1,61 +1,65 @@
-/* Apply styles to the body and HTML elements to make the page cover the full viewport */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+.cdc_wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 2fr 3fr;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: "hello book book" "bookings bookings bookings";
+  gap: 1em;
+
+  padding: 1rem;
+
+  .cdc_hello {
+    grid-area: hello;
+
+    .cdc_hello_content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      height: 100%;
+    }
+
+    .cdc_time {
+      margin-top: 1em;
+      color: gray;
+    }
+
+    h1 {
+      font-size: 4em;
+      font-weight: 300;
+
+      margin-top: 30px;
+    }
+
+    h2 {
+      font-weight: 200;
+      font-size: 2em;
+
+      margin-top: 40px;
+    }
   }
-  
-  /* Create a full-page container */
-  .full-page-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+
+  .cdc_book {
+    grid-area: book;
+
+    .cdc_heading {
+      margin-top: 1em;
+      color: gray;
+    }
+
+    .cdc_content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10px 3em;
+    }
+
+    button {
+      margin-left: 2em;
+    }
   }
-  
-  /* Style the "Book a Personal Space" heading */
-  h1 {
-    font-size: 28px;
-    font-weight: bold;
+
+  .cdc_bookings {
+    grid-area: bookings;
   }
-  
-  /* Adjust the width of the text input boxes */
-  .form-control {
-    width: 100%; /* Make the text input boxes 100% width (full width) */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  /* Rest of your CSS styles (unchanged) */
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  /* Style the checkboxes and labels */
-  .form-check-input {
-    margin-right: 10px;
-  }
-  
-  .form-check-label {
-    font-weight: normal;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  select.form-control {
-    width: 150%; /* Make the select box 100% width (full width) */
-  }
-  
+}
