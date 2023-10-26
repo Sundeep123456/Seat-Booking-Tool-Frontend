@@ -19,6 +19,9 @@ import { PersonalSpaceBookAPersonalSpaceComponent } from './components/personal-
 
 @NgModule({
   declarations: [
+    AdminDashboardComponent,
+    HeaderComponent,
+    FooterComponent,
     AboutComponent,
     ContactComponent,
     ServicesComponent,
@@ -27,12 +30,13 @@ import { PersonalSpaceBookAPersonalSpaceComponent } from './components/personal-
     PersonalSpaceHomeComponent,
     PersonalSpaceYourBookingsComponent,
     PersonalSpaceBookAPersonalSpaceComponent,
-    
+
   ],
   imports: [
     FooterComponent,
     CommonModule,
     HomeComponent,
+    AboutComponent,
     HeaderComponent,
     AdminDashboardComponent,
     AdminRoutingModule
