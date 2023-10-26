@@ -22,6 +22,7 @@ import { PersonalSpaceBookAPersonalSpaceComponent } from './components/personal-
     AdminDashboardComponent,
     HeaderComponent,
     FooterComponent,
+    AboutComponent,
     ContactComponent,
     ServicesComponent,
     VisitorsHomeComponent,
@@ -32,9 +33,12 @@ import { PersonalSpaceBookAPersonalSpaceComponent } from './components/personal-
 
   ],
   imports: [
+    FooterComponent,
     CommonModule,
     HomeComponent,
     AboutComponent,
+    HeaderComponent,
+    AdminDashboardComponent,
     AdminRoutingModule
   ]
 })

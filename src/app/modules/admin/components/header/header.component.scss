@@ -1,25 +1,17 @@
+@use '@angular/material' as mat;
 
-    /* Zoom effect on click */
-    .nav-item.zoom a {
-        transition: transform 0.2s;
-    }
-
-    .nav-item.zoom a:hover {
-        transform: scale(1.2); /* Adjust the scale factor for more zoom */
-    }
-
-    /* Increase the height of the navbar */
-    .navbar {
-        min-height: 100px; /* Adjust the height as needed */
-    }
-
-    /* Center the logo vertically */
-    .navbar-brand {
-        display: flex;
-        align-items: center;
-    }
-/* Add margin to the logo image */
-.navbar-brand img {
-    margin-right: 10px; /* Adjust the margin as needed */
+@include mat.core();
+.cdc-header {
+    height: 40px;
+    background-color: map-get($map: mat.$gray-palette, $key: 800);
+    color: white;
 }
 
+.cdc-spacer {
+    flex: 1 1 auto;
+}
+
+.cdc-button {
+    // padding: 0px 20px;
+    height: 30px;
+}

@@ -1,0 +1,61 @@
+@use '@angular/material' as mat;
+.cdc-sidebar {
+  display: flex;
+  flex-direction: column;
+
+  .cdc-sidebar-item {
+    color: #111;
+    width: 100%;
+    text-decoration: solid;
+    cursor: pointer;
+    box-shadow: none !important;
+    padding: 10px 20px;
+    font-weight: 500;
+    border-radius: 0;
+    &:hover {
+      background: map-get($map: mat.$indigo-palette, $key: 50 );
+    }
+    
+    &.active {
+      background-color: map-get($map: mat.$indigo-palette, $key: 100 );
+    }
+    
+    
+  }
+
+  .cdc-sidebar-item-group {
+    padding: 0;
+    cursor: pointer;
+    box-shadow: none !important;
+    font-weight: 500;
+    border-radius: 0;
+
+    
+    
+    &.active {
+      background-color: map-get($map: mat.$indigo-palette, $key: 100 ) !important;
+    }
+
+    &-item {
+      &:hover{
+        background: map-get($map: mat.$indigo-palette, $key: 50 ) !important;
+      }
+    }
+    
+    
+    .mat-expansion-panel-header {
+      padding: 10px 20px;
+
+      &:hover{
+        background: map-get($map: mat.$indigo-palette, $key: 50 ) !important;
+      }
+
+      
+      height: auto;
+      justify-content: space-between;
+      
+    }
+    
+  }
+}
+  
