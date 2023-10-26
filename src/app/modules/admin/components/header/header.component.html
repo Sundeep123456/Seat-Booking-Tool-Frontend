@@ -9,12 +9,16 @@
 
     <style>
         /* Zoom effect on click */
-        .nav-item.zoom a {
+        .nav-item a {
             transition: transform 0.2s;
         }
 
-        .nav-item.zoom a:hover {
-            transform: scale(1.2); /* Adjust the scale factor for more zoom */
+        .nav-item a:hover {
+            transform: scale(1.2);
+        }
+
+        .navbar-nav .nav-item.active a {
+            transform: scale(1.2);
         }
     </style>
 </head>

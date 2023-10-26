@@ -9,6 +9,9 @@ import { HomeComponent } from './components/Today/home.component';
 import { AboutComponent } from './components/Personal-Space/about.component';
 import { ContactComponent } from './components/Visitors/contact.component';
 import { ServicesComponent } from './components/Find-a-Collegue/services.component';
+import { VisitorsHomeComponent } from './components/visitors-home/visitors-home.component';
+import { YourVisitorsComponent } from './components/your-visitors/your-visitors.component';
+
 
 
 @NgModule({
@@ -20,6 +23,9 @@ import { ServicesComponent } from './components/Find-a-Collegue/services.compone
     AboutComponent,
     ContactComponent,
     ServicesComponent,
+    VisitorsHomeComponent,
+    YourVisitorsComponent,
+    
   ],
   imports: [
     CommonModule,

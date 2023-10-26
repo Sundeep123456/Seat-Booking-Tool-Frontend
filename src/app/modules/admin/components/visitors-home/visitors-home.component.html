@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .welcome-message {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .form-container {
+            width: 60%;
+            padding: 20px;
+            border: 0.5px solid #ccc;
+            border-radius: 20px;
+            text-align: center;
+            align-self: flex-start; 
+            margin-left: 35px;
+            
+        }
+        .form-heading {
+            font-size: 30px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .form-group {
+            margin: 10px 0;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold; /* Make labels bold */
+            font-size: 20px;
+
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .btn-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .btn.advanced {
+            margin-left: 10px;
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-message">
+        Welcome to Condeco Visitors
+    </div>
+    <div class="form-container">
+        <div class="form-heading">
+            Add a visitor
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company">
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="canada">Canada</option>
+                    <option value="canada">Zapan</option>
+                    <option value="canada">Russia</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <select id="location" name="location">
+                    <option value="towerx">Bengaluru-Tower-A</option>
+                    <option value="towery">Bengaluru-Tower-B</option>
+                    <option value="towerx">Bengaluru-Tower-C</option>
+                    <option value="towery">Bengaluru-Tower-D</option>
+                    <option value="towerx">Bengaluru-Tower-E</option>
+                    <option value="towery">Bengaluru-Tower-X</option>
+                    <option value="towerx">Bengaluru-Tower-Y</option>
+                    <option value="towery">Bengaluru-Tower-Z</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="arrivedDate">Arrived Date:</label>
+                <input type="date" id="arrivedDate" name="arrivedDate">
+            </div>
+            <div class ="form-group">
+                <label for="arrivedTime">Arrived Time:</label>
+                <input type="time" id="arrivedTime" name="arrivedTime">
+            </div>
+            <div class="btn-container">
+                <button class="btn">Add</button>
+                <button class="btn advanced">Advanced</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

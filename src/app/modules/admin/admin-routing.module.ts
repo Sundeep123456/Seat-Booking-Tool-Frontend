@@ -5,6 +5,10 @@ import { HomeComponent } from './components/Today/home.component';
 import { AboutComponent } from './components/Personal-Space/about.component';
 import { ServicesComponent } from './components/Find-a-Collegue/services.component';
 import { ContactComponent } from './components/Visitors/contact.component';
+import { VisitorsHomeComponent } from './components/visitors-home/visitors-home.component';
+import { YourVisitorsComponent } from './components/your-visitors/your-visitors.component';
+
+
 const routes: Routes = [
   {
     path: '',
@@ -14,6 +18,8 @@ const routes: Routes = [
       { path: 'about', component: AboutComponent },
       { path: 'services', component: ServicesComponent },
       { path: 'contact', component: ContactComponent },
+      { path: 'visitors-home', component: VisitorsHomeComponent },
+      { path: 'your-visitors', component: YourVisitorsComponent },
       { path: '', redirectTo: '/admin/home', pathMatch: 'full' },
     ],
   },
