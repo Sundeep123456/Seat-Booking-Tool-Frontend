@@ -1,1 +1,106 @@
-<P>it works</P>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html {
+            background-color: rgba(16, 15, 15, 0.942); /* Semi-transparent black background */
+        }
+        body {
+            color: rgb(7, 7, 7); /* Text color on the background */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+           
+        }
+        .container {
+            display: flex;
+            margin-left: 10px;
+            margin-top: 0px;
+         
+        }
+        .right {
+            flex: 1;
+            padding: 20px;
+            margin-right: 900px;
+            border-radius: 10px;
+        }
+        .box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for the content box */
+            border-radius: 10px;
+        }
+        .form-group {
+            margin: 10px 0;
+            display: flex; /* To align items horizontally */
+            align-items: center; /* To vertically center items */
+        }
+        .form-group label {
+            margin-right: 10px; /* Add space between labels and input elements */
+        }
+        .form-group input, .form-group select {
+            margin-right: 10px; /* Add space between input elements */
+        }
+        .left{
+            margin-top: 10px;
+        }
+
+        .button-container {
+            margin-top: 10px;
+            display: flex; /* To align items horizontally */
+            align-items: center; /* To vertically center items */
+        }
+        .button-container button {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            margin-right: 10px; /* Add a margin between the buttons */
+            border-radius: 5px;
+            border-color: white;
+            border: none;
+        }
+
+        h1 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Apply text shadow to the h1 element only */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>Your Visitors</h1>
+            <p>Visitors listed are displayed by the meeting start date. For meetings that span more than one day, select the initial date. Only extend visitors and visitors not attached to bookings are listed.</p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="box">
+            <h2>When is your visitor due?</h2>
+            <div class="form-group">
+                <label for="start">Search between:</label>
+                <input type="date" id="start" name="start">
+                <label for="end">and</label>
+                <input type="date" id="end" name="end">
+            </div>
+            <p>The Date range should not exceed 3 months.</p>
+            <div class="form-group">
+                <label for ="display">Display:</label>
+                <select id="display" name="display">
+                    <option value="10">10 </option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                
+                </select>
+                <label for="results-per-page">Results per page</label>
+                
+            </div>
+            <div class="button-container">
+                <button id="find-visitor">Find Visitor</button>
+                <button id="new-visitor">New Visitor</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

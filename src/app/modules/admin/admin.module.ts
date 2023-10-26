@@ -11,6 +11,9 @@ import { ContactComponent } from './components/Visitors/contact.component';
 import { ServicesComponent } from './components/Find-a-Collegue/services.component';
 import { VisitorsHomeComponent } from './components/visitors-home/visitors-home.component';
 import { YourVisitorsComponent } from './components/your-visitors/your-visitors.component';
+import { PersonalSpaceHomeComponent } from './components/personal-space-home/personal-space-home.component';
+import { PersonalSpaceYourBookingsComponent } from './components/personal-space-your-bookings/personal-space-your-bookings.component';
+import { PersonalSpaceBookAPersonalSpaceComponent } from './components/personal-space-book-a-personal-space/personal-space-book-a-personal-space.component';
 
 
 
@@ -25,6 +28,9 @@ import { YourVisitorsComponent } from './components/your-visitors/your-visitors.
     ServicesComponent,
     VisitorsHomeComponent,
     YourVisitorsComponent,
+    PersonalSpaceHomeComponent,
+    PersonalSpaceYourBookingsComponent,
+    PersonalSpaceBookAPersonalSpaceComponent,
     
   ],
   imports: [
