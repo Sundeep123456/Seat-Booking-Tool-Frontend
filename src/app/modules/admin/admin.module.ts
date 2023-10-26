@@ -19,10 +19,6 @@ import { PersonalSpaceBookAPersonalSpaceComponent } from './components/personal-
 
 @NgModule({
   declarations: [
-    AdminDashboardComponent,
-    HeaderComponent,
-    FooterComponent,
-    AboutComponent,
     ContactComponent,
     ServicesComponent,
     VisitorsHomeComponent,
