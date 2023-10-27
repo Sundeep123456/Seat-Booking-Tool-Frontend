@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Add your head content here -->
+
+    <style>
+        
+    </style>
+</head>
+<body>
+    <mat-toolbar class="cdc-header">
+        <span>Condeco</span>
+        <span class="cdc-spacer"></span>
+        <button mat-raised-button color="primary" class="cdc-button" (click)="logout()">
+            Log out
+        </button>
+    </mat-toolbar>
+
+    <script>
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById("indian-time-date");
+            if (dateTimeElement) {
+                const now = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+                dateTimeElement.textContent = `Indian Time: ${now}`;
+            }
+        }
+
+        // Call the function to update the Indian time and date
+        updateDateTime();
+
+        // Update the time and date every minute
+        setInterval(updateDateTime, 60000);
+    </script>
+</body>
+</html>

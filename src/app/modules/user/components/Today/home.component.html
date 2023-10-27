@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Booking Page</title>
+</head>
+<body>
+<div class="cdc_wrapper">
+  <mat-card class="cdc_hello">
+    <mat-card-content class="cdc_hello_content">
+      <div>
+        <fa-icon [icon]="faClock"></fa-icon>
+        <br>
+        <h4 class="cdc_time">00:49, Fri/27/Oct/2023</h4>
+        <h1>Hello, <b>{{ user }}</b></h1>
+        <h2>You're working remotely today</h2>
+      </div>
+      <div><a href="">Change your status</a></div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="cdc_book">
+      <mat-card-content>
+        <fa-icon [icon]="faSearch"></fa-icon>
+        <h4 class="cdc_heading">Book a personal space</h4>
+        <div class="cdc_content">
+          <mat-form-field>
+            <mat-label>Location</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Group</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Floor</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Workspace Type</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <mat-form-field>
+          <input matInput type="datetime-local" placeholder="start date">
+        </mat-form-field>
+        <button mat-flat-button color="primary">Book</button>
+      </mat-card-content>
+  </mat-card>
+  <mat-card class="cdc_bookings">
+    <mat-card-content>
+      <div *ngIf="bookings.length != 0; else elseBlock">Content to render when condition is true.</div>
+      <ng-template #elseBlock>You have bookings for today</ng-template>
+    </mat-card-content>
+  </mat-card>
+</div>
+</body>
+</html>
