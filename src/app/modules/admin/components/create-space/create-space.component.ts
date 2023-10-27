@@ -62,7 +62,7 @@ export class CreateSpaceComponent implements OnInit {
 
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':'application/json;charset=UTF-8'
+        // 'Content-Type':'application/json;charset=UTF-8'
       })
     }
 
@@ -71,14 +71,16 @@ export class CreateSpaceComponent implements OnInit {
     // const spacetype = (document.getElementById("spacetypeInput") as HTMLSelectElement)?.value;
     const location = (document.getElementById("locationInput") as HTMLInputElement)?.value;
 
-
-
-    this.httpClient.post("http://192.168.1.19:5296/Space/Create", {
+    const data = {
       workspace,
       floors,
       spaceType: this.spaceType,
       location
-    }, httpOptions).subscribe({
+    };
+    const formData =  new FormData();
+    Object.keys(data).forEach(e => formData.append(e, (data as any)[e]))
+
+    this.httpClient.post("http://localhost:5296/Space/Create",formData , httpOptions).subscribe({
       next: (data) => console.log("Data: ",data),
       error: (err) => console.error(err),
       complete: () => console.log("completed")
