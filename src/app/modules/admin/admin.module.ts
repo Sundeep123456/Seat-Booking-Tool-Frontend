@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/Today/home.component';
 import { CreateSpaceComponent } from './components/create-space/create-space.component';
-
+import {UsersComponent} from './components/users/users.component'
 
 
 @NgModule({
@@ -22,7 +22,8 @@ import { CreateSpaceComponent } from './components/create-space/create-space.com
     HeaderComponent,
     AdminDashboardComponent,
     AdminRoutingModule,
-    CreateSpaceComponent
+    CreateSpaceComponent,
+    UsersComponent
   ]
 })
 export class AdminModule { }

@@ -7,7 +7,7 @@
   .left {
     flex: 1;
     padding: 20px;
-    margin-right: 20px; /* Add margin-right to create a gap */
+    margin-right: 20px;
     border-radius: 10px;
   }
   
@@ -23,23 +23,25 @@
     border-radius: 10px;
   }
   
-  .form-group {
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-  }
-  
-  .form-group label {
-    margin-right: 10px;
-  }
-  
-  .button-container {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-  }
-  
   button {
     margin-right: 10px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .mat-elevation-z8 {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
   }
   

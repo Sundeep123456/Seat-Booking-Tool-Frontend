@@ -7,9 +7,12 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from "@angular/material/button";
+
+// icons 
 import { MatIconModule } from '@angular/material/icon';
 import { faClock, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+
 import { FormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
@@ -68,19 +71,19 @@ export class CreateSpaceComponent implements OnInit {
 
     const workspace = (document.getElementById("workspaceInput") as HTMLInputElement)?.value;
     const floors = (document.getElementById("floorsInput") as HTMLInputElement)?.value;
-    // const spacetype = (document.getElementById("spacetypeInput") as HTMLSelectElement)?.value;
+    const spacetype = (document.getElementById("spacetypeInput") as HTMLSelectElement)?.value;
     const location = (document.getElementById("locationInput") as HTMLInputElement)?.value;
 
     const data = {
-      workspace,
-      floors,
+      country: workspace,
+      floor: floors,
       spaceType: this.spaceType,
       location
     };
     const formData =  new FormData();
     Object.keys(data).forEach(e => formData.append(e, (data as any)[e]))
 
-    this.httpClient.post("http://localhost:5296/Space/Create",formData , httpOptions).subscribe({
+    this.httpClient.post("http://192.168.1.19:8080/Space/Create",formData , httpOptions).subscribe({
       next: (data) => console.log("Data: ",data),
       error: (err) => console.error(err),
       complete: () => console.log("completed")

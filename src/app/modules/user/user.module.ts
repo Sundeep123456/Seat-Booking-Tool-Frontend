@@ -22,8 +22,6 @@ import {MatCardModule} from "@angular/material/card";
 @NgModule({
   declarations: [
     ContactComponent,
-    ServicesComponent,
-    YourVisitorsComponent,
     PersonalSpaceHomeComponent,
     PersonalSpaceYourBookingsComponent,
     PersonalSpaceBookAPersonalSpaceComponent,
@@ -35,11 +33,13 @@ import {MatCardModule} from "@angular/material/card";
     HomeComponent,
     AboutComponent,
     HeaderComponent,
+    ServicesComponent,
     UserDashboardComponent,
     UserRoutingModule,
     FontAwesomeModule,
     VisitorsHomeComponent,
-    MatCardModule
+    MatCardModule,
+    YourVisitorsComponent
   ]
 })
 export class UserModule { }

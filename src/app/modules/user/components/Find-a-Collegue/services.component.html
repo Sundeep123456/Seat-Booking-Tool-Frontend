@@ -1,14 +1,23 @@
 <div class="colleague-search-container">
-    <h1><img src="https://thumbs.dreamstime.com/z/user-group-icon-isolated-pictogram-avatar-several-people-user-group-icon-isolated-pictogram-avatar-several-people-white-214654367.jpg?w=768" alt="" style="width: 40px; height: 40px;">Find a Colleague
-        
-    </h1>
-    <div class="input-group">
-      <input type="text" placeholder="First Name" class="first-name">
-      <input type="text" placeholder="Last Name" class="last-name">
-      
-      <div class="input-group">
-        <!-- Date Picker -->
-        <input type="date">
-        <!-- Find Colleague Button -->
-        <button class="find-colleague-button">Find Colleague</button>
+  <mat-card class="cdc_book">
+    <mat-card-content>
+      <fa-icon [icon]="faSearch"></fa-icon>
+      <h4 class="cdc_heading">Find a Colleague</h4>
+      <div class="cdc_content">
+        <mat-form-field class="example-full-width">
+          <mat-label>First Name</mat-label>
+          <input id="firstNameInput" matInput placeholder="Enter First Name">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Last Name</mat-label>
+          <input id="lastNameInput" matInput placeholder="Enter Last Name">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Date</mat-label>
+          <input id="dateOfBirthInput" type="date" matInput placeholder="Select Date">
+        </mat-form-field>
       </div>
+      <button mat-flat-button color="primary" (click)="findColleague()">Find Colleague</button>
+    </mat-card-content>
+  </mat-card>
+</div>
