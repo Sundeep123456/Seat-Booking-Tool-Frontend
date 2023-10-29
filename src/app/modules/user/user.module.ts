@@ -20,8 +20,6 @@ import { PersonalSpaceBookAPersonalSpaceComponent } from './components/personal-
 @NgModule({
   declarations: [
     ContactComponent,
-    ServicesComponent,
-    YourVisitorsComponent,
     PersonalSpaceHomeComponent,
 
   ],
@@ -31,11 +29,14 @@ import { PersonalSpaceBookAPersonalSpaceComponent } from './components/personal-
     HomeComponent,
     AboutComponent,
     HeaderComponent,
+    ServicesComponent,
     UserDashboardComponent,
     UserRoutingModule,
     PersonalSpaceYourBookingsComponent,
     PersonalSpaceBookAPersonalSpaceComponent,
     VisitorsHomeComponent,
+    findColleague
+    YourVisitorsComponent
   ]
 })
 export class UserModule { }
