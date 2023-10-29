@@ -1,1 +1,105 @@
-<p>personal-space-book-a-personal-space works!</p>
+<div class="cdc-component-wrapper">
+
+    <div class="cdc-content-wrapper">
+        <h1>
+            Book a personal space
+        </h1>
+        <mat-card class="card">
+            <mat-card-content>
+                <!-- {{jsonData}} <br>
+                {{countryIndex}}<br>
+                {{locationIndex}}<br>
+                {{groupIndex}}<br>
+                {{floorIndex}}<br>
+                {{workspaceTypeIndex}} -->
+                <form class="example-form">
+                    <div class="form-wrapper">
+                        <mat-form-field>
+                            <mat-label>Country</mat-label>
+                            <mat-select [(value)]="countryIndex" >
+                                <mat-option *ngFor="let country of countries" [value]="country">
+                                    {{country}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Location</mat-label>
+                            <mat-select (selectionChange)="fetchWorkspaceTypes()" [(value)]="locationIndex" >
+                                <mat-option *ngFor="let location of locations" [value]="location">
+                                    {{location}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Workspace type</mat-label>
+                            <mat-select  (selectionChange)="fetchFloors()" [(value)]="workspaceTypeIndex" >
+                                <mat-option *ngFor="let workspaceType of workspaceTypes" [value]="workspaceType">
+                                    {{workspaceType}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Floors</mat-label>
+                            <mat-select [(value)]="floorIndex" >
+                                <mat-option *ngFor="let floor of floors" [value]="floor">
+                                    {{floor}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        
+                    </div>
+                </form>
+
+                <div class="week-container">
+                    <week-component (filterChanged)="filterChangeHandler($event)" />
+                    <button mat-flat-button (click)="fetchSpaces()" color="primary">Search</button>
+
+                </div>
+            </mat-card-content>
+        </mat-card>
+<mat-card class="card">
+    <mat-card-content>
+        <table mat-table [dataSource]="dataSource" class="">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Workspace </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="spaceType">
+              <th mat-header-cell *matHeaderCellDef> Workspace Type </th>
+              <td mat-cell *matCellDef="let element"> {{element.spaceType}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="floor">
+              <th mat-header-cell *matHeaderCellDef> Floor </th>
+              <td mat-cell *matCellDef="let element"> {{element.floor}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="location">
+              <th mat-header-cell *matHeaderCellDef> Location </th>
+              <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="country">
+              <th mat-header-cell *matHeaderCellDef> Country </th>
+              <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </mat-card-content>
+</mat-card>
+
+    </div>
+
+</div>

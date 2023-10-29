@@ -17,14 +17,14 @@ const routes: Routes = [
     component: UserDashboardComponent,
     children: [
       { path: 'home', component: HomeComponent },
-      { path: 'about', component: AboutComponent },
       { path: 'services', component: ServicesComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'visitors-home', component: VisitorsHomeComponent },
       { path: 'your-visitors', component: YourVisitorsComponent },
       { path: 'personal-space-home', component: PersonalSpaceHomeComponent},
-      { path: 'personal-space-your-bookings', component:  PersonalSpaceYourBookingsComponent},
-      { path: 'personal-space-book-a-personal-space', component: PersonalSpaceBookAPersonalSpaceComponent },
+      { path: 'personal-space/home', component: AboutComponent },
+      { path: 'personal-space/your-bookings', component:  PersonalSpaceYourBookingsComponent},
+      { path: 'personal-space/book-a-personal-space', component: PersonalSpaceBookAPersonalSpaceComponent },
       { path: '', redirectTo: '/admin/home', pathMatch: 'full' },
       
     ],
