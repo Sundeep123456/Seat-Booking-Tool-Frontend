@@ -14,6 +14,8 @@ import { YourVisitorsComponent } from './components/your-visitors/your-visitors.
 import { PersonalSpaceHomeComponent } from './components/personal-space-home/personal-space-home.component';
 import { PersonalSpaceYourBookingsComponent } from './components/personal-space-your-bookings/personal-space-your-bookings.component';
 import { PersonalSpaceBookAPersonalSpaceComponent } from './components/personal-space-book-a-personal-space/personal-space-book-a-personal-space.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {MatCardModule} from "@angular/material/card";
 
 
 
@@ -21,7 +23,6 @@ import { PersonalSpaceBookAPersonalSpaceComponent } from './components/personal-
   declarations: [
     ContactComponent,
     ServicesComponent,
-    VisitorsHomeComponent,
     YourVisitorsComponent,
     PersonalSpaceHomeComponent,
     PersonalSpaceYourBookingsComponent,
@@ -35,7 +36,10 @@ import { PersonalSpaceBookAPersonalSpaceComponent } from './components/personal-
     AboutComponent,
     HeaderComponent,
     UserDashboardComponent,
-    UserRoutingModule
+    UserRoutingModule,
+    FontAwesomeModule,
+    VisitorsHomeComponent,
+    MatCardModule
   ]
 })
 export class UserModule { }
