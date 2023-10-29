@@ -1,0 +1,8 @@
+<div class="cdc-week-wrapper">
+    <div class="cdc-week-day" *ngFor="let header of currentWeekHeader; index as i">
+        <div class="cdc-week-day-item day">{{header}}</div>
+        <div class="cdc-week-day-item date">{{currentWeek[i]}}</div>
+        <div class="cdc-week-day-item AM" (click)="toggleFilterItem(i, 'AM')" [ngClass]="searchFilter[i]['AM'] ? 'active' : ''">AM</div>
+        <div class="cdc-week-day-item PM" (click)="toggleFilterItem(i, 'PM')" [ngClass]="searchFilter[i]['PM'] ? 'active' : ''">PM</div>
+    </div>
+</div>

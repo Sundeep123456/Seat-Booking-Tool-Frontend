@@ -15,16 +15,7 @@ import { NgFor } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-
-
-interface SpaceType {
-  value: string;
-  viewValue: string;
-}
-
-
-
+import { SpaceType } from 'src/app/models/SpaceType';
 
 @Component({
   selector: 'app-create-space',

@@ -24,8 +24,6 @@ import { PersonalSpaceBookAPersonalSpaceComponent } from './components/personal-
     VisitorsHomeComponent,
     YourVisitorsComponent,
     PersonalSpaceHomeComponent,
-    PersonalSpaceYourBookingsComponent,
-    PersonalSpaceBookAPersonalSpaceComponent,
 
   ],
   imports: [
@@ -35,7 +33,9 @@ import { PersonalSpaceBookAPersonalSpaceComponent } from './components/personal-
     AboutComponent,
     HeaderComponent,
     UserDashboardComponent,
-    UserRoutingModule
+    UserRoutingModule,
+    PersonalSpaceYourBookingsComponent,
+    PersonalSpaceBookAPersonalSpaceComponent,
   ]
 })
 export class UserModule { }

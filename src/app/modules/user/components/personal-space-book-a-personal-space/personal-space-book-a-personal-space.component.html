@@ -1,1 +1,69 @@
-<p>personal-space-book-a-personal-space works!</p>
+<div class="cdc-component-wrapper">
+
+    <div class="cdc-content-wrapper">
+        <h1>
+            Book a personal space
+        </h1>
+        <mat-card>
+            <mat-card-content>
+                <!-- {{jsonData}} <br>
+                {{countryIndex}}<br>
+                {{locationIndex}}<br>
+                {{groupIndex}}<br>
+                {{floorIndex}}<br>
+                {{workspaceTypeIndex}} -->
+                <form class="example-form">
+                    <div class="form-wrapper">
+                        <mat-form-field>
+                            <mat-label>Country</mat-label>
+                            <mat-select [(value)]="countryIndex" >
+                                <mat-option *ngFor="let country of object.keys(Data); index as i" [value]="country">
+                                    {{country}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Location</mat-label>
+                            <mat-select [(value)]="locationIndex" >
+                                <mat-option *ngFor="let location of object.keys(Data[countryIndex]); index as i" [value]="location">
+                                    {{location}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Group</mat-label>
+                            <mat-select [(value)]="groupIndex" >
+                                <mat-option *ngFor="let group of object.keys(Data[countryIndex][locationIndex]); index as i" [value]="group">
+                                    {{group}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Floors</mat-label>
+                            <mat-select [(value)]="floorIndex" >
+                                <mat-option *ngFor="let floor of object.keys(Data[countryIndex][locationIndex][groupIndex]); index as i" [value]="floor">
+                                    {{floor}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Workspace type</mat-label>
+                            <mat-select [(value)]="workspaceTypeIndex" >
+                                <mat-option *ngFor="let workspaceType of object.keys(Data[countryIndex][locationIndex][groupIndex][floorIndex]); index as i" [value]="workspaceType">
+                                    {{workspaceType}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <button mat-flat-button color="primary">Search</button>
+                    </div>
+                </form>
+
+                <div class="week-container">
+                    <week-component (filterChanged)="filterChangeHandler($event)" />
+
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</div>
