@@ -5,14 +5,25 @@ import { BookingData, SlotTime, SlotData } from 'src/app/models/BookingData';
 import { FormsModule } from '@angular/forms';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { MatButtonModule } from "@angular/material/button";
 
 import {WeekComponent} from "src/app/modules/user/components/week/week.component";
 import { SearchFilter } from 'src/app/models/SearchFilter';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { MatTableModule } from '@angular/material/table';
 
 
 
+
+interface Space {
+  id: string
+  floor: string
+  spaceType: string
+  location: string
+  country: string
+}
 
 @Component({
   selector: 'app-personal-space-book-a-personal-space',
@@ -26,60 +37,104 @@ import { SearchFilter } from 'src/app/models/SearchFilter';
     MatButtonModule,
     NgFor,
     MatSelectModule,
-    WeekComponent
+    WeekComponent,
+    MatTableModule,
+    NgIf
   ]
 })
 export class PersonalSpaceBookAPersonalSpaceComponent {
 
   object = Object;
 
-  Data: BookingData = {
-    "India": {
-      "Banglore-t1": {
-        "Cabin": {
-          "3": {
-            "Desk": {
-              "M": [
-                SlotTime.AM
-              ]
-            }
-          }
-        }
-      },
-      "Banglore-t2": {
-        "Cabin": {
-          "3": {
-            "Desk": {
-              "M": [
-                SlotTime.AM
-              ]
-            }
-          }
-        }
-      }
-    }
-  };
+  displayedColumns: string[] = [
+    'id',
+    'spaceType',
+    'floor',
+    'location',
+    'country'
+  ];
 
-  jsonData: string = JSON.stringify(this.Data)
+  dataSource: Space[] = [];
 
-  countryIndex: string = "";
+  countryIndex: string = "India";
   locationIndex :string = "";
   groupIndex :string = "";
   floorIndex :string = "";
   workspaceTypeIndex :string = "";
   searchFilter: SearchFilter | null = null;
 
+  countries: string[] = ["India"]
+  locations: string[] = []
+  workspaceTypes: string[] = []
+  floors: string[] = []
 
-  initializeData(data: BookingData): void {
-    this.countryIndex = Object.keys(data)[0];
-    this.locationIndex = Object.keys(data[this.countryIndex])[0];
-    this.groupIndex = Object.keys(data[this.countryIndex][this.locationIndex])[0];
-    this.floorIndex = Object.keys(data[this.countryIndex][this.locationIndex][this.groupIndex])[0];
-    this.workspaceTypeIndex = Object.keys(data[this.countryIndex][this.locationIndex][this.groupIndex][this.floorIndex])[0];
+  fetchData(params: any): Observable<any> {
+    return this.httpClient.get("http://192.168.1.19:8080/Space/Filter", {
+      params
+    })
   }
 
-  constructor() {
-    this.initializeData(this.Data);
+  fetchWorkspaceTypes() {
+    this.workspaceTypeIndex = "";
+    this.floorIndex = "";
+    this.floors = [];
+    this.fetchData({
+      "country": this.countryIndex,
+      "location": this.locationIndex
+    }).subscribe({
+      next: (resp) => {
+        this.workspaceTypes = resp as string[]
+      },
+      error: (err) => {
+        console.error(err)
+      }
+    })
+  }
+
+  fetchFloors() {
+    this.floorIndex = "";
+    this.floors = []
+    this.fetchData({
+      "country": this.countryIndex,
+      "location": this.locationIndex,
+      "spaceType": this.workspaceTypeIndex
+    }).subscribe({
+      next: (resp) => {
+        this.floors = resp as string[]
+      },
+      error: (err) => {
+        console.error(err)
+      }
+    })
+  }
+
+  fetchSpaces() {
+    this.fetchData({
+      "country": this.countryIndex,
+      "location": this.locationIndex,
+      "spaceType": this.workspaceTypeIndex,
+      "floor": this.floorIndex
+    }).subscribe({
+      next: (resp) => {
+        this.dataSource = resp;
+      },
+      error: (err) => {
+        console.error(err)
+      }
+    })
+  }
+
+  constructor(private httpClient: HttpClient) {
+    this.fetchData({
+      "country": this.countryIndex
+    }).subscribe({
+      next: (resp) => {
+        this.locations = resp as string[]
+      },
+      error: (err) => {
+        console.error(err)
+      }
+    })
   }
 
   filterChangeHandler(filter: SearchFilter) {
