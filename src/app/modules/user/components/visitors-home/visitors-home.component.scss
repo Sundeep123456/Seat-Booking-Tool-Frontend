@@ -1,0 +1,35 @@
+.cdc_wrapper {
+  padding: 2em;
+  background: #ece6e6;
+  min-height: 100vh;
+
+  hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  }
+
+  .cdc_field_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 20vw;
+
+    h6 {
+      font-weight: bolder;
+      font-size: 1em;
+      margin-right: 20px;
+    }
+  }
+}
+
+.mat-mdc-form-field-infix {
+  width: 15vw;
+}
+
+.cdc_country_flag_image {
+  height: 20px;
+  margin-left: .5em;
+}
