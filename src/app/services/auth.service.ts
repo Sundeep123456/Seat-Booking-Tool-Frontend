@@ -1,35 +1,42 @@
 import { Observable, of, throwError } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private httpClient: HttpClient) {}
 
-  setToken(token: string): void {
-    localStorage.setItem('token', token);
+  setUserData(data: any): void {
+    localStorage.setItem('userData', data);
   }
 
-  getToken(): string | null {
-    return localStorage.getItem('token');
+  getUserData(): string | null {
+    return localStorage.getItem('userData');
   }
 
   isLoggedIn() {
-    return this.getToken() !== null;
+    return this.getUserData() !== null;
   }
 
   logout() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('userData');
     this.router.navigate(['login']);
   }
 
   login({ email, password }: any): Observable<any> {
-    if (email === 'sundeep@gmail.com' && password === 'sundeep123') {
-      this.setToken('abcdefghijklmnopqrstuvwxyz');
-      return of({ name: 'Tarique Akhtar', email: 'admin@gmail.com' });
+    const httpOptions = {
+      headers: new HttpHeaders({
+        // 'Content-Type':'application/json;charset=UTF-8'
+      })
     }
-    return throwError(new Error('Failed to login'));
+    let data = new FormData;
+    data.append("email", email)
+    data.append("password", password)
+    return this.httpClient.post("http://192.168.1.19:8080/Auth/Login", data, httpOptions);
   }
 }
