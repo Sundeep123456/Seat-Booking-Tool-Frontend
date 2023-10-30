@@ -1,0 +1,31 @@
+<div class="cdc-create-space">
+    <mat-card class="cdc_book">
+        <mat-card-content>
+          <fa-icon [icon]="faSearch"></fa-icon>
+          <h4 class="cdc_heading">Create a space</h4>
+          <div class="cdc_content">
+            <mat-form-field class="example-full-width">
+                <mat-label>Country</mat-label>
+                <input id="workspaceInput" matInput placeholder="Ex. Pizza">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Floors</mat-label>
+                <input id="floorsInput" matInput placeholder="Ex. Pizza">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Space Type</mat-label>
+              <mat-select [(value)]="spaceType" id="spacetypeInput">
+                <mat-option *ngFor="let spaceType of spaceTypes" [value]="spaceType.value">
+                  {{spaceType.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Location</mat-label>
+                <input id="locationInput" matInput placeholder="Ex. Pizza">
+            </mat-form-field>
+          </div>
+          <button mat-flat-button color="primary" (click)="submitForm()">Create</button>
+        </mat-card-content>
+    </mat-card>
+</div>

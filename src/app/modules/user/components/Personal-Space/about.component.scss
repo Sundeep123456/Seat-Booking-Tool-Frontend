@@ -1,0 +1,38 @@
+.cdc_wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "book hello" "bookings bookings";
+  gap: 1em;
+
+  padding: 1rem;
+
+  .cdc_hello {
+    grid-area: hello;
+  }
+
+  .cdc_book {
+    grid-area: book;
+
+    .cdc_heading {
+      color: gray;
+      font-weight: 200;
+    }
+
+    .cdc_content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10px 3em;
+    }
+
+    button {
+      margin-left: 2em;
+    }
+  }
+
+  .cdc_bookings {
+    grid-area: bookings;
+  }
+}

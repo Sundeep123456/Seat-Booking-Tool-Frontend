@@ -1,7 +1,63 @@
-.Backgroundimage1{
-    width : 100vw;
-    height : 100vh;
-    background-image: url(../assets/images/backgroundimage.jpg);
-    background-size: cover;
+@use '@angular/material' as mat;
+
+.cdc-login-wrapper {
+    background-image: url("../../../assets/images/airplane.jpg") ;
+    height: 100vh;
+    width: 100vw;
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        height: 40px;
     }
+
+    .cdc-login-modal {
+        width: 30%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: rgba($color: #FFF, $alpha: 0.4);
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .cdc-login-content {            
+            form {
+                h1 {
+                    font-weight: 700;
+                    font-size: 40px;
+                    margin-bottom: 20px;
+                    color: #444;
+                }
+                display: flex;
+                align-items: start;
+                justify-content: center;
+                flex-direction: column;
+            }
+            #password, #email {
+                outline: none;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 10px;
+                // box-shadow: 2px 2px 5px;
+                background: map-get($map: mat.$indigo-palette, $key: 50 );
+            }
+
+            #submit {
+                border-radius: 10px;
+                outline: none;
+                border: none;
+                padding: 10px 20px;
+                background-color: map-get($map: mat.$pink-palette, $key: 600 );
+                color: white;
+                font-weight: 700;
+            }
+        }
+    }
+}

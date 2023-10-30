@@ -1,0 +1,21 @@
+
+  
+  .cdc_book {
+    grid-area: book;
+
+    .cdc_heading {
+      margin-top: 1em;
+      color: gray;
+    }
+
+    .cdc_content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10px 3em;
+    }
+
+    button {
+      margin-left: 2em;
+    }
+  }

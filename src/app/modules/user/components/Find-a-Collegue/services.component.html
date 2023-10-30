@@ -1,0 +1,23 @@
+<div class="colleague-search-container">
+  <mat-card class="cdc_book">
+    <mat-card-content>
+      <fa-icon [icon]="faSearch"></fa-icon>
+      <h4 class="cdc_heading">Find a Colleague</h4>
+      <div class="cdc_content">
+        <mat-form-field class="example-full-width">
+          <mat-label>First Name</mat-label>
+          <input id="firstNameInput" matInput placeholder="Enter First Name">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Last Name</mat-label>
+          <input id="lastNameInput" matInput placeholder="Enter Last Name">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Date</mat-label>
+          <input id="dateOfBirthInput" type="date" matInput placeholder="Select Date">
+        </mat-form-field>
+      </div>
+      <button mat-flat-button color="primary" (click)="findColleague()">Find Colleague</button>
+    </mat-card-content>
+  </mat-card>
+</div>
