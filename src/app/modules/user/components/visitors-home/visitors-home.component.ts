@@ -9,6 +9,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from "@angular/material/button";
 import {MatTableModule} from "@angular/material/table";
 import {MatTabsModule} from "@angular/material/tabs";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 
 
 
@@ -41,8 +43,42 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class VisitorsHomeComponent {
 
+  name:string = "";
+  company:string = "";
+  country:string = "";
+  location:string = "";
+  time:string = "";
+  addToContacts:boolean = false;
+
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
+
+  createVisitor():void {
+    let data = (new FormData)
+    data.append("name", this.name);
+    data.append("company", this.company);
+    data.append("country", this.country);
+    data.append("location", this.location);
+    data.append("user", "1");
+    data.append("arrivalTime", new Date(this.time).getTime().toString());
+    data.append("addToContacts", JSON.stringify(this.addToContacts));
+    console.log(JSON.stringify(data))
+    this.httpClient.post("http://192.168.1.19:8080/Visitor/Create",data , {}).subscribe({
+      next: () => {
+        this.name = "";
+        this.company = "";
+        this.country = "";
+        this.location = "";
+        this.time = "";
+        this.addToContacts = false;
+      },
+      error: (err) => console.error(err),
+      complete: () => console.log("completed")
+    });
+  }
+
+  constructor(private httpClient: HttpClient) {
+  }
 
   countries: any [] = [
     { code: "AF", code3: "AFG", name: "Afghanistan", number: "004" },

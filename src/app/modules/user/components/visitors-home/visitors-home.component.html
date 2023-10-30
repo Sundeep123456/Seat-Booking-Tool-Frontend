@@ -16,7 +16,7 @@
               <h6>Name</h6>
               <mat-form-field class="example-full-width">
                 <mat-label>Name</mat-label>
-                <input matInput placeholder="Sai nath" />
+                <input [(ngModel)]="name" #ctrl="ngModel" [ngModelOptions]="{standalone: true}" matInput placeholder="Sai nath" />
               </mat-form-field>
             </div>
 
@@ -24,14 +24,14 @@
               <h6>Company</h6>
               <mat-form-field class="example-full-width">
                 <mat-label>Company</mat-label>
-                <input matInput placeholder="Airbus" />
+                <input [(ngModel)]="company" #ctrl="ngModel" [ngModelOptions]="{standalone: true}" matInput placeholder="Airbus" />
               </mat-form-field>
             </div>
 
             <div class="cdc_field_wrapper">
               <h6>Country</h6>
               <mat-form-field class="example-full-width">
-                <mat-select>
+                <mat-select [(ngModel)]="country" #ctrl="ngModel" [ngModelOptions]="{standalone: true}">
                     <mat-option value="" disabled selected>Select Country</mat-option>
                     <mat-option *ngFor="let country of countries" [value]="country.name">
                       {{country.name}} <img class="cdc_country_flag_image" src='{{ "https://flagsapi.com/" + country.code + "/flat/64.png" }}' />
@@ -43,7 +43,7 @@
             <div class="cdc_field_wrapper">
               <h6>Location</h6>
               <mat-form-field class="example-full-width">
-                <mat-select>
+                <mat-select [(ngModel)]="location" #ctrl="ngModel" [ngModelOptions]="{standalone: true}">
                   <mat-option value="" disabled selected>Select Country</mat-option>
                   <mat-option *ngFor="let country of countries" [value]="country.name">
                     {{country.name}}
@@ -55,13 +55,13 @@
             <div class="cdc_field_wrapper">
               <h6>Time</h6>
               <mat-form-field>
-                <input matInput type="datetime-local" placeholder="start date">
+                <input [(ngModel)]="time" #ctrl="ngModel" [ngModelOptions]="{standalone: true}" matInput type="datetime-local" placeholder="start date">
               </mat-form-field>
             </div>
 
-            <mat-checkbox>Add to contacts</mat-checkbox>
+            <mat-checkbox [(ngModel)]="addToContacts" #ctrl="ngModel" [ngModelOptions]="{standalone: true}">Add to contacts</mat-checkbox>
             <br>
-            <button mat-flat-button color="primary">Add</button>
+            <button mat-flat-button color="primary" (click)="createVisitor()">Add</button>
             <button mat-stroked-button disabled>Advanced</button>
           </form>
         </div>

@@ -51,7 +51,8 @@ export class PersonalSpaceBookAPersonalSpaceComponent {
     'spaceType',
     'floor',
     'location',
-    'country'
+    'country',
+    'actions'
   ];
 
   dataSource: Space[] = [];

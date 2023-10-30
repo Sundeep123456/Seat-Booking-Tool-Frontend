@@ -35,7 +35,7 @@ import { PersonalSpaceBookAPersonalSpaceComponent } from './components/personal-
     PersonalSpaceYourBookingsComponent,
     PersonalSpaceBookAPersonalSpaceComponent,
     VisitorsHomeComponent,
-    findColleague
+    ServicesComponent,
     YourVisitorsComponent
   ]
 })

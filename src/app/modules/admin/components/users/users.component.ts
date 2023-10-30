@@ -6,6 +6,7 @@ import { HeaderComponent } from '../header/header.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { MatCardModule } from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+import { HttpClient } from '@angular/common/http';
 
 // import { MatFormFieldModule } from '@angular/material/form-field';
 // import { MatButtonModule } from "@angular/material/button";
@@ -34,15 +35,18 @@ import {MatTableModule} from '@angular/material/table';
 })
 export class UsersComponent {
   dataSource = []
-  displayedColumns: string[] = ['name', 'email', 'role'];
-  users: any[] = [
-    { name: 'User 1', email: 'user1@example.com', role: 'Admin' },
-    { name: 'User 2', email: 'user2@example.com', role: 'User' },
-    { name: 'User 3', email: 'user3@example.com', role: 'User' },
-    // Add more users as needed
-  ];
+  displayedColumns: string[] = ['id','name', 'email', 'phone'];
+  users: any[] = []
 
-  constructor() {}
+  constructor(private httpClient: HttpClient) {
+    this.httpClient.get("http://192.168.1.19:8080/User",{} ).subscribe({
+      next: (data) => {
+        this.users = data as any
+      },
+      error: (err) => console.error(err),
+      complete: () => console.log("completed")
+    });
+  }
 
   createUser() {
     // Implement the logic for creating a user here
