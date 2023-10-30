@@ -4,6 +4,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { HomeComponent } from './components/Today/home.component';
 import { CreateSpaceComponent } from './components/create-space/create-space.component';
 import {UsersComponent} from './components/users/users.component'
+import {VisitorsComponent} from './components/visitors/visitors.component'
 
 const routes: Routes = [
   {
@@ -16,6 +17,8 @@ const routes: Routes = [
       { path: '', redirectTo: '/admin/home', pathMatch: 'full' },
       
       {path: 'users', component: UsersComponent},
+
+      {path : 'visitors', component: VisitorsComponent}
     ],
 
   },

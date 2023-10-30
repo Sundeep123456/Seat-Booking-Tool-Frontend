@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/Today/home.component';
 import { CreateSpaceComponent } from './components/create-space/create-space.component';
 import {UsersComponent} from './components/users/users.component'
+import {VisitorsComponent} from './components/visitors/visitors.component'
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {UsersComponent} from './components/users/users.component'
     AdminDashboardComponent,
     AdminRoutingModule,
     CreateSpaceComponent,
-    UsersComponent
+    UsersComponent,
+    VisitorsComponent
   ]
 })
 export class AdminModule { }
